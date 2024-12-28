@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .calculator {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    .calculator h1 {
+        margin-bottom: 20px;
+    }
+    
+    .calculator form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .calculator input, .calculator select, .calculator button {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+    }
+    
+    .calculator button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .calculator button:hover {
+        background-color: #45a049;
+    }
+    
+    .result {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #333;
+    }
+</style>    
+</head>
+<body>
+    <div class="calculator">
+        <h1>Kalkulator Sederhana</h1>
+        <p>By Mohammad Al Farabi Sidqi</p>
+        <form method="POST">
+            <input type="number" name="num1" placeholder="Angka Pertama" required>
+            <input type="number" name="num2" placeholder="Angka Kedua" required>
+            <select name="operation">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+            <button type="submit">Hitung</button>
+        </form>
+        {% if result is not none %}
+            <div class="result">
+                <h2>Hasil: {{ result }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
